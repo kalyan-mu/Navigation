@@ -3,12 +3,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import ProductScreen from "../../screens/product";
 import SettingScreen from "../../screens/settings";
-import MyDrawer from "../drawer.navigation/drawer.index";
+import HomeScreen from "../../screens/home";
+
 
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
-  MyDrawer: "home",
+  Home: "home",
   Product: "cart",
   Settings: "md-settings",
 };
@@ -26,22 +27,22 @@ function Navigation() {
   return (
     <Tab.Navigator
       screenOptions={createScreenOptions}
-      initialRouteName="MyDrawer"
+      initialRouteName="HomeScreen"
     >
       <Tab.Screen
-        name="MyDrawer"
-        component={MyDrawer}
+        name="Home"
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Product"
         component={ProductScreen}
-        // options={{ headerShown: false }}
+        options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingScreen}
-        // options={{ headerShown: false }}
+        options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );
