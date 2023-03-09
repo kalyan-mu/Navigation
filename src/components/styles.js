@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
   },
   Main1: {
     fontSize: 30,
+    margin: 16,
+  },
+  Main2: {
+    margin: 16,
   },
 });
 

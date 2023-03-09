@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { SafeArea } from "../components/safearea";
 import styles from "../components/styles";
 
-function SettingScreen() {
+function SettingScreen({ navigation }) {
   return (
     <SafeArea style={styles.Main}>
       <Text style={styles.Main1}>Setting Screen</Text>

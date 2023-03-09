@@ -23,7 +23,7 @@ const createScreenOptions = ({ route }) => {
   };
 };
 
-function Navigation() {
+function Navigation({ navigation }) {
   return (
     <Tab.Navigator
       screenOptions={createScreenOptions}
@@ -32,17 +32,43 @@ function Navigation() {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerLeft: () => (
+            <Ionicons
+              name="ios-menu"
+              size={30}
+              onPress={() => navigation.openDrawer()}
+            ></Ionicons>
+          ),
+        }}
       />
       <Tab.Screen
         name="Product"
         component={ProductScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerLeft: () => (
+            <Ionicons
+              name="ios-menu"
+              size={30}
+              onPress={() => navigation.openDrawer()}
+            ></Ionicons>
+          ),
+        }}
       />
       <Tab.Screen
         name="Settings"
         component={SettingScreen}
-        options={{ headerShown: false }}
+        options={{
+          tabBarStyle: { display: "none" },
+          headerLeft: () => (
+            <Ionicons
+              name="arrow-back"
+              size={30}
+              color="black"
+              onPress={() => navigation.goBack()}
+            />
+          ),
+        }}
       />
     </Tab.Navigator>
   );
